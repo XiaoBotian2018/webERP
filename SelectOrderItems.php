@@ -756,7 +756,7 @@ if ($_SESSION['RequireCustomerSelection'] ==1
 				WHERE (stockcategory.stocktype='F' OR stockcategory.stocktype='D' OR stockcategory.stocktype='L' " . $RawMaterialSellable . ")
 				AND stockmaster.mbflag <>'G'
 				AND stockmaster.discontinued=0 ";
-
+		$_SESSION['Items'.$identifier]->CustItemSQL=$IncludeCustItem;
 		if (isset($_POST['Keywords']) AND mb_strlen($_POST['Keywords'])>0) {
 			//insert wildcard characters in spaces
 			$_POST['Keywords'] = mb_strtoupper($_POST['Keywords']);
